@@ -1,5 +1,10 @@
 CC=g++
 
+unittestAckeraman.exe: \
+		src/ackermann.cpp \
+		include/ackermann.h
+	$(CC) $< -I include -D UNITTEST -o $@
+
 bin/ackermann.o: \
 		src/ackermann.cpp \
 		include/ackermann.h | bin

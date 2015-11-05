@@ -18,3 +18,20 @@ unsigned long ackermann(
 		return ackermann(m - 1, ackermann(m, n - 1));
 	}
 }
+
+#ifdef UNITTEST
+#include <iostream>
+using namespace std;
+int main()
+{
+	assert(ackermann(0,0) == 1);
+	assert(ackermann(0,1) == 2);
+	
+	assert(ackermann(1,0) == 2);
+	
+	assert(ackermann(1,1) == 3);
+	
+	cout << "ackermann(m, n) unit test passed." << endl;
+	return 0;
+}
+#endif
