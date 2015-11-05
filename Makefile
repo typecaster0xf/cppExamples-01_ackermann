@@ -1,7 +1,7 @@
 CC=g++
 
-ackermann.o: ackermann.cpp ackermann.h
-	$(CC) -c $< -o $@
+ackermann.o: src/ackermann.cpp include/ackermann.h
+	$(CC) $< -c -I include -o $@
 
 .PHONY: clean
 clean:
