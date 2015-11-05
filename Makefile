@@ -1,14 +1,17 @@
 CC=g++
 
-ackermann.o: \
+bin/ackermann.o: \
 		src/ackermann.cpp \
-		include/ackermann.h
+		include/ackermann.h | bin
 	$(CC) $< -c -I include -o $@
-ackermann__opt.o: \
+bin/ackermann__opt.o: \
 		src/ackermann.cpp \
-		include/ackermann.h
+		include/ackermann.h | bin
 	$(CC) $< -c -I include -O3 -D NDEBUG -o $@
+
+bin:
+	mkdir bin
 
 .PHONY: clean
 clean:
-	rm -f *.o
+	rm -rf bin/
