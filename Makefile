@@ -5,7 +5,7 @@ ackermann.exe: \
 		bin/ackermann__opt.o
 	$(CC) $^ -o $@
 
-unittestAckeraman.exe: \
+unittestAckermann.exe: \
 		src/ackermann.cpp \
 		include/ackermann.h
 	$(CC) $< -I include -D UNITTEST -o $@
